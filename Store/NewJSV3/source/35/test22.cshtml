@@ -1,0 +1,48 @@
+﻿
+@{ 
+//------------------------------------------------------------------------------ 
+//        Date  2018-05-29
+//        Author  polltek.com   
+//			 				test 
+//        File  test22.cshtml  Page file 
+//------------------------------------------------------------------------------
+ 
+    ViewBag.Title = "test22";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+  <style type="text/css">
+       
+    </style>
+}
+
+@section scripts{
+    <script src="~/Areas/dev/ViewJS/test22.js?v=@ViewBag.ts"></script>
+    <script type="text/javascript">
+    //    var model_string = '@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model))';
+    //    km.model = JSON.parse(model_string); 
+     //   km.pageSize = @ViewBag.Settings["gridrows"];
+    </script>
+}
+
+<div class="easyui-layout" data-options="fit:true" style=" overflow:hidden;">
+    <div id="north_panel" data-options="region:'north',border:false" style="background-color: #f3f3f3;">
+            <div class="km_toolbar">
+            <div id="km_toolbar" style="float:left;"></div><div id="km_toolbar2" style="float:left;"></div>
+        </div>
+           <div id="km_toolbar_2" class="km_toolbar" style="display:none">
+            <a id="toolbar_delete" href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-undo'" title=" cancel " onclick="km.toolbar.do_undo();"> cancel </a>
+            <a id="toolbar_save" href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save'" title=" save " onclick="km.toolbar.do_save();"> save </a>
+        </div>
+    </div>
+    <div id="main-panel_a" data-options="region: 'west',border:true" style='width: 100%;'> 
+    	
+<table id="address_test"></table> 
+
+    	
+    </div> 
+</div>
+<div style='display:none'>
+	
+</div>

@@ -1,0 +1,298 @@
+﻿@{
+    //------------------------------------------------------------------------------
+    //       时间： 2018-04-30
+    //       作者： 蔡捷 (2634691810@qq.com)
+    //
+    //       文件： checkout.cshtml 页面文件
+    //------------------------------------------------------------------------------
+
+    ViewBag.Title = "checkout";
+    Layout = "~/Views/Home/_main_layout.cshtml";
+}
+
+@section head{
+    <style type="text/css">
+        .mycart{
+            display:none;
+        }
+        .table_content td{
+            padding:5px;
+        }
+        .totalDiv{
+            float:right;
+            padding-right:20px;
+            clear:right;
+        }
+        .amount{
+            width: 250px; 
+        }
+    </style>
+
+}
+
+@section scripts{
+
+
+<link href="/content/themes/insdep/easyui.css" rel="stylesheet" type="text/css">
+<script src="/Scripts/03jeasyui/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
+     
+<script src="/Scripts/02jquery/jqext.yxz.js"></script> 
+@*<script src="/scripts/d3.v4.min.js" charset="utf-8"></script>
+<script src="/scripts/dagre-d3.js"></script>*@
+<script type="text/javascript" src="/scripts/ystep.js"></script>
+
+<link rel="stylesheet" href="/content/ystep.css" type="text/css">
+    <script src="~/Areas/ViewJS/checkout.js?v=@ViewBag.ts"></script>
+    <script type="text/javascript">
+
+        var model_string = '@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model))';
+        vd.model = JSON.parse(model_string);
+
+    </script>
+}
+
+
+<section id="team" class="page-section">
+    <div class="container">
+
+
+
+
+            <div class="easyui-layout"   style=" overflow:hidden; height:600px;">
+
+                <div class="ystep2" style=" width:auto; margin: 0 auto; ">
+                </div>
+                 
+
+                    <div id="shipping_address_dialog" class="easyui-dialog" style="width: 900px; height: 400px; padding: 10px; "
+                         data-options="title:'Shipping Address', draggable:false,closable:false,
+         modal:false, minimizable: false,collapsible: false,resizable:false,
+                 closable: false ,			buttons:[
+                         @*{
+				text:'上一步',
+				iconCls:'icon-edit',
+				handler:function(){GoToStep('shipping address',-1);}
+                 },*@
+                         {
+                 text:'Next',
+                 iconcls:'icon-help',
+                 handler:function(){Saveaddress_shipping();}
+                 }]">
+
+
+                        <form id="address_shipping_content" class="form_content" method="post">
+                            <table class="table_content" cellpadding="3" cellspacing="0" border="0">
+                                <input id='TPL_address_id' name='id' type='hidden' value='0' />
+
+                                <tr><td class="td_title">name</td> <td>  <input id='TPL_name' data-options="required:true" name='name' type='text' class='easyui-textbox' style='width:300px' /></td></tr>
+                                <tr><td class="td_title">cell</td> <td>  <input id='TPL_cell' data-options="required:true" name='cell' type='text' class='easyui-textbox' style='width:200px' /></td></tr>
+                                <tr><td class="td_title">email</td> <td>  <input id='TPL_email' data-options="required:true" name='email' type='text' class='easyui-textbox' style='width:500px' /></td></tr>
+
+
+                                @*<tr><td class="td_title">add_on</td> <td>  <input id='TPL_add_on' data-options="" name='add_on' type='text' class='easyui-textbox' style='width:230px' /></td></tr>*@
+
+                                <tr><td class="td_title">address</td> <td>  <input id='TPL_address' data-options="required:true" name='address' type='text' class='easyui-textbox' style='width:500px' /></td></tr>
+
+                                @*<tr><td class="td_title">address_type</td> <td>  <input id='TPL_address_type' data-options="" name='address_type' type='text' class='easyui-textbox' style='width:200px' /></td></tr>*@
+
+
+                                <tr><td class="td_title">city</td> <td>  <input id='TPL_city' data-options="required:true" name='city' type='text' class='easyui-textbox' style='width:300px' /></td></tr>
+                                <tr><td class="td_title">province</td> <td>  <input id='TPL_province' data-options="required:true" name='province' type='text' class='easyui-textbox' style='width:300px' /></td></tr>
+
+                                <tr><td class="td_title">postal_code</td> <td>  <input id='TPL_postal_code' data-options="required:true" name='postal_code' type='text' class='easyui-textbox' style='width:200px' /></td></tr>
+
+                            </table>
+                        </form>
+
+
+
+
+
+                    </div>
+
+
+
+
+                    @*<div id="contact_address_dialog" class="easyui-dialog" style="width: 900px; height: 600px; display: none; padding: 10px;"
+                         data-options="title:'Contact Address', draggable:false,closable:false,
+         modal:false, minimizable: false,collapsible: false,resizable:false,
+                 closable: false ,			buttons:[{
+				text:'上一步',
+				iconCls:'icon-edit',
+				handler:function(){GoToStep('contact_address',-1);}
+                 },{
+                 text:'下一步',
+                 iconcls:'icon-help',
+                 handler:function(){Saveaddress_contact();}
+                 }]">
+
+
+                        <form id="address_contact_content" class="form_content" method="post">
+                            <table class="table_content" cellpadding="3" cellspacing="0" border="0">
+                                 
+
+                                <tr><td class="td_title">address</td> <td>  <input id='TPL_address' data-options="" name='address' type='text' class='easyui-textbox' style='width:500px' /></td></tr>
+
+                                 
+
+                                <tr><td class="td_title">cell</td> <td>  <input id='TPL_cell' data-options="" name='cell' type='text' class='easyui-textbox' style='width:500px' /></td></tr>
+
+                                <tr><td class="td_title">city</td> <td>  <input id='TPL_city' data-options="" name='city' type='text' class='easyui-textbox' style='width:500px' /></td></tr>
+
+                                <tr><td class="td_title">email</td> <td>  <input id='TPL_email' data-options="" name='email' type='text' class='easyui-textbox' style='width:500px' /></td></tr>
+                                <input id='TPL_id' name='id' type='hidden' value='0' />
+
+                                <tr><td class="td_title">name</td> <td>  <input id='TPL_name' data-options="" name='name' type='text' class='easyui-textbox' style='width:500px' /></td></tr>
+
+                                <tr><td class="td_title">postal_code</td> <td>  <input id='TPL_postal_code' data-options="" name='postal_code' type='text' class='easyui-textbox' style='width:500px' /></td></tr>
+
+                                <tr><td class="td_title">province</td> <td>  <input id='TPL_province' data-options="" name='province' type='text' class='easyui-textbox' style='width:500px' /></td></tr>
+
+                                <tr><td class="td_title">user_id</td> <td>  <input id='TPL_user_id' data-options="" name='user_id' type='text' class='easyui-textbox' style='width:100px' /></td></tr>
+                            </table>
+                        </form>
+
+
+
+
+
+                    </div>*@ 
+
+
+
+
+
+
+                <div id="order_dialog" class="easyui-dialog" style="width: 900px; height: 500px; padding: 10px;"
+                     data-options="title:'order detail', draggable:false,closable:false,
+         modal:false, minimizable: false,collapsible: false,resizable:false,
+                 closable: false ,			buttons:[{
+				text:'Prev',
+				iconCls:'icon-edit',
+				handler:function(){GoToStep('shipping_address',-1);}
+                 },{
+                 text:'Next',
+                 iconcls:'icon-help',
+                 handler:function(){SaveOrder();}
+                 }]">
+
+
+                    <input id='TPL_order_id' name='id' type='hidden' value='0' />
+                    <div id='detail_div_orders_detail' style="overflow:auto;height:360px;">
+
+
+                    </div>
+                    <div class="totalDiv">Tax: <span class="amount" id="tax"></span></div>
+                    <div class="totalDiv">Total: <span class="amount" id="total"></span></div>
+
+
+
+
+                </div>
+
+
+                <div id="finish_dialog" class="easyui-dialog" style="width: 900px; height: 400px; padding: 10px;"
+                     data-options="title:'Finish', draggable:false,closable:false,
+         modal:false, minimizable: false,collapsible: false,resizable:false,
+                 closable: false ,			buttons:[{
+				text:'Prev',
+				iconCls:'icon-edit',
+				handler:function(){GoToStep('order',-1);}
+                 },{
+                 text:'Done',
+                 iconcls:'icon-help',
+                 handler:function(){Done();}
+                 }]">
+
+
+                    <div id='detail_div_orders_detail'>
+                        Thanks for shopping at HuiRun.ca. 
+
+                    </div>
+
+
+
+
+
+                </div>
+                 
+            <script id="template_orders_detail" type="text/x-jquery-tmpl">
+                <div class="col-md-6 col-sm-6 col-xs-12" style="width:100%">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>order detail <small>orders_detail</small></h2>
+                            @*<ul class="nav navbar-right panel_toolbox">
+                                    <li>
+                                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="#">Settings 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Settings 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>*@
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+                            <table class="table table-bordered">
+                                <thead>
+
+                                    <tr>
+                                        <th>add_by </th>
+                                        <th>add_on </th>
+                                        <th>amount </th>
+                                        <th>comments </th>
+                                        <th>id </th>
+                                        <th>item_id </th>
+                                        <th>options </th>
+                                        <th>options_price </th>
+                                        <th>order_id </th>
+                                        <th>price </th>
+                                        <th>result </th>
+                                        <th>status </th>
+                                        <th>time_out </th>
+                                        <th>total </th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    {{each Table}}
+                                    <tr>
+                                        <td>{{= $value.add_by}} </td>
+                                        <td>{{= $value.add_on}} </td>
+                                        <td>{{= $value.amount}} </td>
+                                        <td>{{= $value.comments}} </td>
+                                        <td>{{= $value.id}} </td>
+                                        <td>{{= $value.item_id}} </td>
+                                        <td>{{= $value.options}} </td>
+                                        <td>{{= $value.options_price}} </td>
+                                        <td>{{= $value.order_id}} </td>
+                                        <td>{{= $value.price}} </td>
+                                        <td>{{= $value.result}} </td>
+                                        <td>{{= $value.status}} </td>
+                                        <td>{{= $value.time_out}} </td>
+                                        <td>{{= $value.total}} </td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </script>
+
+
+        </div>
+    </div>
+    </section>

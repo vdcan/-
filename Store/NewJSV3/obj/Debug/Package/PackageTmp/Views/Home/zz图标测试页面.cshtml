@@ -1,0 +1,109 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Portal";
+}
+<link href="~/Scripts/03jeasyui/icons/icon-all.css" rel="stylesheet" />
+<script src="~/Scripts/03jeasyui/jquery-easyui-1.4.4/jquery.min.js"></script>
+<script src="~/Scripts/03jeasyui/icons/icons.hamburg.js"></script>
+<script src="~/Scripts/01core/BaiduTemplate.js"></script>
+<style>
+    .iconbox { float: left; width: 32px; height: 32px; border: 1px solid #ccc; padding: 5px; margin: 0 10px 10px 0; }
+        .iconbox:hover { border: 1px solid red; cursor: pointer; }
+    .icon_selected { border: 1px solid red; }
+</style>
+<div style=" width:100%; height:auto; padding:10px;">
+    @*<span id="icon-hamburg-home" class="icon icon-hamburg-home iconbox" title="icon-hamburg-home"></span>
+        <span id="icon-hamburg-networking" class="icon icon-hamburg-networking iconbox"></span>
+        <span id="con-hamburg-hire-me" class="icon icon-hamburg-hire-me iconbox"></span>
+        <span id="icon-hamburg-home" class="icon icon-hamburg-home iconbox"></span>
+        <span id="icon-hamburg-networking" class="icon icon-hamburg-networking iconbox"></span>
+        <span id="con-hamburg-hire-me" class="icon icon-hamburg-hire-me iconbox"></span>
+        <span id="icon-hamburg-home" class="icon icon-hamburg-home iconbox"></span>
+        <span id="icon-hamburg-networking" class="icon icon-hamburg-networking iconbox"></span>
+        <span id="con-hamburg-hire-me" class="icon icon-hamburg-hire-me iconbox"></span>*@
+
+    <br />
+    <div id="tpl_result"></div>
+</div>
+
+<!-- 模板1开始，可以使用script（type设置为text/html）来存放模板片段，并且用id标示 -->
+<script id="tpltest" type="text/html">
+    <div style="display:block;width:600px; height:400px; margin:0 auto">
+        <div style=" width:100%; height:60px; line-height:60px; background:#e2dede">
+            <span id="span_selected_icon" class="icon iconbox"></span><b id="icontext"></b>
+            <span style=" float:right">icon图标选择:共有<%=list.length%>个元素</span> 
+        </div>
+        <%if(list.length>1) { %>
+        <div id="div_icons" style="width:100%; height:auto; padding:10px; ">
+            <%for(var i=0;i<list.length;i++){%>
+                <span id="<%=list[i].iconCls%>" class="icon <%=list[i].iconCls%> iconbox" title="<%=list[i].iconCls%>" onclick="km.selectedIcon(this);"></span>
+                <%}%>
+        </div>
+        <%}else{%>
+        <h2>没有数据</h2>
+        <%}%>
+    </div>
+</script>
+<!-- 模板1结束 -->
+
+<script type="text/javascript">
+    var km = {};
+    km.pre_icon = '';
+    //百度模板引擎使用 详情：http://tangram.baidu.com/BaiduTemplate/
+    km.template = {
+        tpl_html: '',//tpl_add模板的html
+        defaultData: {
+            "title": '欢迎使用baiduTemplate',
+            "list": [
+                'test1:默认支持HTML转义，如输出<script>，也可以关掉，语法<:=value> 详见API',
+                 'test2:',
+                 'test3:',
+                'test4:list[5]未定义，模板系统会输出空'
+            ]
+        },
+        initTemplate: function (tplData) {
+            //使用baidu.template命名空间
+            var bt = baidu.template;
+            //默认分隔符为<% %>，也可以自定义，可以设置分隔符
+            //可以设置分隔符
+            //bt.LEFT_DELIMITER='<!';
+            //bt.RIGHT_DELIMITER='!>';
+
+            //可以设置输出变量是否自动HTML转义
+            //bt.ESCAPE = false;
+            //最简使用方法 this.tpl_add_html = bt('tpl_add', templateData);
+            //this.tpl_html = bt('tpltest', this.defaultData);
+            //最简使用方法
+            var html = bt('tpltest', tplData);
+            //渲染
+            document.getElementById('tpl_result').innerHTML = html;
+        },
+        init: function (data) {
+            this.initTemplate(data);
+        }
+    };
+    km.selectedIcon = function (target) {
+        if (km.pre_icon != '') {
+            $("#" + km.pre_icon).removeClass("icon_selected");
+        }
+        $(target).addClass("icon_selected");
+        km.pre_icon = $(target)[0].id;
+        console.info("你选择了：" + km.pre_icon);
+        $("#icontext").text(km.pre_icon);
+        $("#span_selected_icon").removeClass();
+        $("#span_selected_icon").addClass("icon ").addClass(km.pre_icon).addClass("iconbox");
+
+    }
+
+    $(function () {
+        //var len = $.kmui.icons.hamburg.length;
+        // console.info(len);
+        var data16 = $.kmui.icons.hamburg;
+        var listData = {
+            "title": '欢迎使用baiduTemplate',
+            "list": data16
+        }
+        km.template.init(listData);
+        // $("#tpl_result").html(km.template.tpl_html);
+    });
+</script>

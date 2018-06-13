@@ -1,0 +1,277 @@
+﻿
+@{ 
+//------------------------------------------------------------------------------ 
+//       时间： 2018-04-29
+//       作者： 蔡捷 (2634691810@qq.com)   
+//			 				show item detail info 
+//       文件： detail.cshtml 页面文件
+//------------------------------------------------------------------------------
+ 
+    ViewBag.Title = "detail";
+    Layout = "~/Views/Home/_main_layout.cshtml";
+}
+
+@using System.Data;
+@section head{
+  <style type="text/css">
+      
+
+      h1, h2, h3, h4, h5, h6 {
+          color: #333;
+          font-weight: normal;
+      }
+
+      h1 {
+          font-size: 30px;
+          margin: 0 0 30px;
+          padding: 5px 0;
+      }
+
+      h2 {
+          font-size: 26px;
+          margin: 0 0 25px;
+          padding: 5px 0;
+      }
+
+      h3 {
+          font-size: 20px;
+          margin: 0 0 20px;
+          padding: 0;
+      }
+
+      h4 {
+          font-size: 16px;
+          margin: 0 0 15px;
+          padding: 0;
+      }
+ 
+      .bs_box {
+          clear: both;
+          margin-bottom: 20px;
+      }
+
+          .bs_box img {
+              float: left;
+              margin-right: 10px;
+              border: 4px solid #fff;
+          }
+
+          .bs_box h4 {
+              margin-bottom: 0;
+          }
+
+              .bs_box h4 a {
+                  font-size: 11px;
+                  color: #000;
+                  font-weight: 700;
+              }
+
+          .bs_box .price {
+              font-size: 12px;
+              font-weight: 700;
+              color: #11bdd1;
+          }
+
+      .product_box {
+          float: left;
+          width: 220px;
+          text-align: center;
+          margin: 0 10px 30px 0;
+          padding-bottom: 20px;
+          border-bottom: 1px dotted #ccc;
+      }
+
+          .product_box img {
+              margin-bottom: 5px;
+          }
+
+          .product_box h3 {
+              font-size: 11px;
+              color: #000;
+              font-weight: 700;
+              margin-bottom: 10px;
+          }
+
+          .product_box .product_price {
+              color: #11bdd1;
+              font-size: 14px;
+              font-weight: 700;
+              margin-bottom: 20px;
+          }
+
+          .product_box .addtocart {
+              float: left;
+              display: block;
+          }
+
+          .product_box .detail {
+              float: right;
+              display: block;
+          }
+           
+
+      .imgBig {
+          width: 350px;
+      }
+      .imgSmall {
+          width: 70px;
+          float:left;
+          padding: 10px;
+      }
+      #specDiv li {
+          list-style: none;
+          padding-left:10px;
+      }
+      .descpription {
+          padding-left: 10px;
+      }
+      #options li {
+          list-style: none;
+          padding-left: 10px;
+      }
+      .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+      }
+      .content_half float_r{
+          width:50%;
+          float:left;
+          margin-left: 20px;
+      }
+      .content_half float_l {
+          width: 50%;
+          float: left;
+          margin-left: 20px;
+      }
+      .float_l{ 
+          float:left;
+      }
+      #content{
+          width: 100%;
+      }
+      .cleaner{
+          float:left;
+          clear:left;
+      }
+
+
+
+
+    </style>
+     
+}
+
+@section scripts{
+    <script src="~/Areas/ViewJS/detail.js?v=@ViewBag.ts"></script>
+     <script type="text/javascript">
+         var model_string = '@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model))';
+         vd.model = JSON.parse(model_string);
+    </script>
+} 
+
+   <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="~/Scripts/jquery.viewbox.min.js"></script> 
+<link href="~/Scripts/viewbox.css" rel="stylesheet" /> 	
+  
+  
+<script id="template_image" type="text/x-jquery-tmpl">
+    {{each Table2}}
+    <a href="{{= $value.url}}" class="thumbnail2"><img src="{{= $value.url}}" class="imgSmall " alt="image" /></a>
+    {{/each}}
+</script>
+
+    <script id="template_item" type="text/x-jquery-tmpl">
+
+    {{each Table}}
+    <div id="content" class="float_l">
+        <h4 id="itemName">{{= $value.item_name}}</h4>
+        <div class="content_half float_l">
+            <a href="{{= $value.url}}" class="thumbnail2" style="padding:10px;"><img src="{{= $value.url}}" class="imgBig" alt="image" /></a>
+            <div id="imagesDiv">
+            </div>
+        </div>
+        <div class="content_half float_r" style="padding-left: 10px;">
+            <table>
+                <tr>
+                    <td width="160">Price:</td>
+                    <td>CAD$ <span id="spanPrice">{{= $value.price}}</span> </td>
+                </tr>
+                <tr>
+                    <td>Availability:</td>
+                    <td>In Stock</td>
+                </tr>
+                <tr>
+                    <td id="price">{{= $value.price}}</td>
+                    <td>{{= $value.price}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="options"> </td>
+                </tr>
+
+            </table>
+
+
+        </div>
+        <div class="cleaner h20"></div>
+        <br />
+
+        <a href="javascript:add({{= $value.id}},GetPrice(),GetItemName(),'{{= $value.url_thumb}}',GetSelectedOptionText(),GetSelectedOptionPrice())" class="addtocart"></a>
+
+    </div>
+    <div class="cleaner h30"></div>
+
+    <h4>Product Description</h4>
+    <p class="descpription"> {{html $value.description}}</p>
+    <div id="specDiv">
+
+
+    </div>
+           {{/each}}
+</script>
+
+
+<script id="template_spec" type="text/x-jquery-tmpl">
+
+    {{each(i, r) Table1}}
+    <h4>{{= r.name }}</h4>
+    <div id="spec_${i}">
+        {{html r.detail}}
+
+    </div>
+    {{/each}}
+</script>
+
+       @*<script id="template_options" type="text/x-jquery-tmpl">
+
+    {{each(i, r) Table3}}
+    <h4>{{= r.option_name }}</h4>
+    <div id="options_${i}">
+        {{html r.option_detail}}
+
+    </div>
+    {{/each}}
+</script>*@><section id="team" class="page-section">
+                <div class="container">
+                   
+
+
+                     
+                    @* <input id="cartPriceOld" type="text" value="0" /><div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+            <input type="radio" autocomplete="off" checked> Checkbox 1 (pre-checked)
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" autocomplete="off"> Checkbox 2
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" autocomplete="off"> Checkbox 3
+        </label>
+    </div>*@
+
+
+                <div id='detail_div_item'></div>
+
+            </div>
+        <!--/.container-->
+    </section>

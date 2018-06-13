@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Home/_main_layout.cshtml";
+    }
+@section head{
+   
+}
+<script src="~/Areas/ViewJS/index.js?v=@ViewBag.ts"></script>
+@section scripts{
+    <script type="text/javascript">
+
+        var model_string = '@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model))';
+        vd.model = JSON.parse(model_string);
+    </script>
+}
+   
+<section id="team" class="page-section">
+    <div class="container">
+        <div class="heading text-left">
+            <!-- Heading -->
+            <h2>最新产品</h2>
+            <p>.</p>
+        </div>     
+           @RenderPage("Index-item_list.cshtml")
+
+    </div>
+    <!--/.container-->
+</section>

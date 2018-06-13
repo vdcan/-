@@ -1,0 +1,69 @@
+﻿@{
+    //------------------------------------------------------------------------------
+    //       时间： 2018-05-01
+    //       作者： 蔡捷
+    //			 				products
+    //       文件： products.cshtml 页面文件
+    //------------------------------------------------------------------------------
+
+    ViewBag.Title = "产品";
+    Layout = "~/Views/Home/_main_layout.cshtml";
+}
+
+@using System.Data;
+@section head{
+    <style type="text/css">
+        .mtable {
+            #padding-top: 15px;
+            float: left;
+            width: 25%;
+        }
+        .sidebar_box{
+            width: 15%;
+            float:left;
+        }
+        .mainDiv {
+            width: 85%;
+            float: left;
+            padding-top: 40px;
+            min-height: 800px;
+        }
+    </style>
+
+}
+ 
+
+ 
+@section scripts{
+<script src="~/Areas/ViewJS/products.js?v=@ViewBag.ts"></script>
+    <script src="~/Areas/ViewJS/index.js?v=@ViewBag.ts"></script>
+    <script type="text/javascript">
+
+        var model_string = '@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model))';
+        vd.model = JSON.parse(model_string);
+    </script>
+}
+<script id="template_category" type="text/x-jquery-tmpl">
+   
+        {{each Table}}
+       
+            <li><a href="javascript:Load_itemData({{= $value.id}})">{{= $value.text}}</a></li> 
+        {{/each}}  
+</script>
+ 
+    <div class="container" style="padding-top: 40px;">
+        <div class="sidebar_box">
+            <span class="bottom"></span>
+            <h3>Categories</h3>
+            <div class="content">
+                <ul class="sidebar_list" id="detail_div_category">
+                    
+                </ul>
+
+            </div>
+        </div>
+
+        <div class ="mainDiv"  >
+            @RenderPage("Index-item_list.cshtml")
+        </div>
+</div> 

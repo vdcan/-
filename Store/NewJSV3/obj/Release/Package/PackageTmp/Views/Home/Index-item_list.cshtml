@@ -1,0 +1,84 @@
+﻿
+<style>
+    .item {
+        border: solid 1px #aaaaaa;
+        height: 200px;
+        margin: 5px;
+        width: 45%;
+        float:left;
+        padding: 10px;
+        overflow:hidden;
+    }
+    .item img{
+        width: 200px;
+    }
+    .imageDiv {
+        float: left;
+        width: 50%;
+    }
+    .textDiv {
+        float: left;
+        width:50%
+    }
+    .priceDiv {
+        float: left;
+        padding-right: 10px;
+    }
+    .add_detail0 {
+        display: none;
+    }
+    .add_option1 {
+        display: none;
+    }
+
+</style>
+
+
+<script>
+
+    var gCID = 1;
+</script>
+
+
+
+@*<script>
+
+    function add(id) {
+        simpleCart.add('name=Red Shoe', 'price=50', 'image=images/thumbs/redShoe.jpg');
+        
+    }
+</script>*@
+
+
+
+<!-- Team Member's Details -->
+    <div class="team-content">
+     
+
+    <div class="row" id="detail_div_item">
+
+    </div>
+</div>
+
+<script id="template_item" type="text/x-jquery-tmpl">
+
+    {{each Table}}
+    <div class="item"  > 
+        <div class="team-member pDark"> 
+            <div  class="imageDiv" > 
+                <a href="/home?mc=detail&id={{= $value.id}}"> <img class="" src="{{= $value.url}}" alt=""></a> 
+            </div>
+            <div class="textDiv">
+                <h4><a href="/home?mc=detail&id={{= $value.id}}"> {{= $value.item_name}}</a> </h4>
+                <span class="priceDiv">CAD$ {{= $value.price}}</span>
+                
+               
+                <a   href="javascript:add2({{= $value.id}},'{{= $value.price}}','{{= $value.item_name}}','{{= $value.url_thumb}}')" class="addtocart add_option{{= $value.hasOptions}}"></a>
+                <a  href="/home?mc=detail&id={{= $value.id}}" class="addtocart add_detail{{= $value.hasOptions}}"></a>
+
+              </div> 
+        </div>
+    </div>
+    {{/each}}
+
+</script>

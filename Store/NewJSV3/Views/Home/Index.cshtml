@@ -1,0 +1,38 @@
+﻿
+@{ 
+//------------------------------------------------------------------------------ 
+//       时间： 2018-04-28
+//       作者： 蔡捷 (2634691810@qq.com)   
+//			 				主页 
+//       文件： index.cshtml 页面文件
+//------------------------------------------------------------------------------
+ 
+    ViewBag.Title = "home";
+    Layout = "~/Views/Home/_main_layout.cshtml";
+}
+
+@using System.Data;
+@section head{
+  <style type="text/css"> 
+    </style>
+     
+}
+<script src="~/Areas/ViewJS/index.js?v=@ViewBag.ts"></script>
+@section scripts{
+    <script type="text/javascript">
+
+        var model_string = '@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model))';
+        vd.model = JSON.parse(model_string);
+    </script>
+}
+<section id="team" class="page-section">
+    <div class="container">
+        <div class="heading text-left">
+            <!-- Heading -->
+            <h2>Latest Products</h2>
+            <p>.</p>
+        </div>        @RenderPage("Index-item_list.cshtml")
+
+    </div>
+    <!--/.container-->
+</section>

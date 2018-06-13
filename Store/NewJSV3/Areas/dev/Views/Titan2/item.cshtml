@@ -1,0 +1,501 @@
+@{
+    //------------------------------------------------------------------------------
+    //       时间： 2018-04-18
+    //       作者： fdsaf
+    //			 				测试模块, 仅仅用于测试
+    //       文件： test_only.cshtml 页面文件
+    //------------------------------------------------------------------------------
+
+    ViewBag.Title = "test_only";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style type="text/css">
+        .thumbnail {
+            float: left;
+        }
+
+        .img_g {
+            float: left;
+        }
+
+        .delete {
+        }
+
+        .qrdiv {
+            width: 120px;
+            height: 140px;
+            padding: 1px;
+            float: left;
+        }
+
+            .qrdiv .image {
+                width: 110px;
+                height: 110px;
+                float: left;
+            }
+
+            .qrdiv .text {
+                padding-left: 10px;
+                float: left;
+            }
+
+        .deleteButton {
+            cursor: pointer;
+            display: none;
+        }
+
+        #pp {
+            position: fixed; /*or前面的是absolute@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "then")*/
+            bottom: 0px;
+        }
+
+
+        #file {
+            float: left;
+        }
+
+        #check {
+            float: left;
+            padding-top: 7px;
+        }
+
+        #filename {
+            float: left;
+            padding-top: 4px;
+        }
+
+        .deletePhotoButton {
+            z-index: 10;
+            display: none;
+        }
+        .selected {
+            border: solid 1px #ff0000;
+        }
+        .detail{
+            width: 100%;
+        } .detail .title {
+            width: 150px;
+            text-align: center;
+            display: block;
+            float:left;
+        }
+            .detail .value {
+                display: block;
+                width: 150px;
+                text-align: right;
+                float: left;
+            }
+    </style>
+}
+
+@section scripts{
+
+<link rel="stylesheet" href="~/Scripts/kindeditor-4.1.10/themes/default/default.css" />
+<script src="~/Scripts/kindeditor-4.1.10/kindeditor.js?fda"></script>
+<script src="~/Scripts/kindeditor-4.1.10/kindeditor-all-min.js?fda"></script>
+<script src="~/Scripts/kindeditor-4.1.10/kindeditor-all.js?fda"></script>
+<script charset="utf-8" src="~/Scripts/kindeditor-4.1.10/kindeditor-min.js?fda"></script>
+<script charset="utf-8" src="~/Scripts/kindeditor-4.1.10/lang/zh_CN.js?fda"></script>
+
+    <script src="~/Scripts/jquery.viewbox.min.js"></script>
+    <script src="~/Scripts/uploadifive.min.js"></script>
+    <link href="~/Scripts/viewbox.css" rel="stylesheet" />
+    <script src="~/Areas/dev/ViewJS/item.js?v=@ViewBag.ts"></script>
+    <script type="text/javascript">
+        var model_string = '@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model))';
+        km.model = JSON.parse(model_string);
+        km.pageSize = @ViewBag.Settings["gridrows"];
+    </script>
+}
+
+<div class="easyui-layout" data-options="fit:true" style=" overflow:hidden;">
+    <div id="north_panel" data-options="region:'north',border:false">
+        <div id="km_toolbar" class="km_toolbar"> </div>
+        <div id="km_toolbar_2" class="km_toolbar" style="display:none">
+            <a id="toolbar_delete" href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-undo'" title="@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "cancel")" onclick="km.toolbar.do_undo();">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "cancel")</a>
+            <a id="toolbar_save" href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save'" title="@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "save")" onclick="km.toolbar.do_save();">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "save")</a>
+        </div>
+    </div>
+    <div id="main-panel_a" data-options="region: 'west',border:true" style='width: 50%;'>
+
+        <table id="item"></table>
+
+    </div>
+    <div id="main-panel_b" data-options="region: 'center',border:true" style='width: 50%;'>
+
+        <div id="user_tabs" class="easyui-tabs" data-options="fit:true,border:false">
+
+
+
+
+            <div title="@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "goods list")" data-options="iconCls:'icon-standard-user'" id="tab_b2">
+
+
+
+
+                <form id="item_content" class="form_content" method="post">
+                    <table class="table_content" cellpadding="3" cellspacing="0" border="0">
+                        <input id='TPL_id' name='id' type='hidden' value='0' />
+
+                        <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "store id")</td> <td>  <input id='TPL_store_id' data-options="" name='store_id' type='text' class='easyui-textbox' style='width:100px' /></td></tr>
+
+                        <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "add_on")</td> <td>  <input id='TPL_add_date' data-options="" name='add_date' type='text' class='easyui-textbox' style='width:230px' /></td></tr>
+
+                        <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "add_by")</td> <td>  <input id='TPL_add_by' data-options="" name='add_by' type='text' class='easyui-textbox' style='width:100px' /></td></tr>
+
+                        <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "category")</td> <td>  <input id='TPL_category_id' data-options="" name='category_id' type='text' class='easyui-textbox' style='width:100px' /></td></tr>
+
+                        <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "name")</td> <td>  <input id='TPL_item_name' data-options="required:true " name='item_name' type='text' class='easyui-textbox' style='width:300px; ' /></td></tr>
+
+                        <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "price")</td> <td>  <input id='TPL_price' validtype=",intOrFloat" required="true" name='price' type='text' class='easyui-textbox' style='width:120px' /></td></tr>
+                        @*validType:number,*@
+                        <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "sort")</td> <td>  <input id='TPL_sort_number' data-options="" name='sort_number' type='text' class='easyui-textbox' style='width:100px' /></td></tr>
+                        @*number,*@
+                       
+
+                        <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "unit") </td> <td>                                 
+                            <input id='TPL_unit' name='unit' class="easyui-combobox" url2='unit_list' data-options="required:true,valueField:'id',textField:'text',editable:true,hasDownArrow:false,panelHeight:90"></td></tr>
+
+                        <tr style="display:none"><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "code")</td> <td>  <input id='TPL_food_code' data-options=" " name='food_code' type='text' class='easyui-textbox' style='width:300px; ' /></td></tr>
+
+                        <tr style="display:none">
+                            <td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "cook flag") </td>
+                            <td>
+                                <input id='TPL_cook_flag0' name='cook_flag' type='radio' checked value='1' />@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "process")
+
+                                <input id='TPL_cook_flag1' name='cook_flag' type='radio' value='0' />@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "no process")
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "active") </td>
+                            <td>
+                                <input id='TPL_active_flag0' name='active_flag' type='radio' checked value='1' />@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "yes")
+
+                                <input id='TPL_active_flag1' name='active_flag' type='radio' value='0' />@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "no")
+                            </td>
+                        </tr>
+
+                        <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "category") </td> <td>                              
+                                 <input id='TPL_categories' name='categories' type='text' url2='category_list' class='easyui-combobox' data-options="valueField:'id',textField:'text',multiple:true" style='width:500px' />  </td></tr>
+
+                        <tr style="display:none;"><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "menu_name") </td> <td>                                   <input id='TPL_options' name='options' type='text' url2='options_list' class='easyui-combobox' data-options="valueField:'id',textField:'text',multiple:true" style='width:500px' />  </td></tr>
+
+                        <tr style="display:none;"><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "specification")</td> <td>  <input id='TPL_specifications' data-options="multiline:true" name='specifications' type='text' class='easyui-textbox' style='width:300px;height:100px;' /></td></tr>
+
+                        <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "flag") </td> <td>                                   <input id='TPL_tags' name='tags' type='text' url2='tag_list' class='easyui-combobox' data-options="valueField:'id',textField:'text',multiple:true" style='width:500px' />  </td></tr>
+                
+                        <tr>
+                            <td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "description")</td>
+                            <td id="tdText">
+                                @*<input id='TPL_description' data-options="multiline:true" name='description' type='text' class='easyui-textbox' style='width:300px;height:100px;' />*@
+
+                                <textarea rows="3" style="width:100%; height: 200px; " class="v_content" id="TPL_description" name="description"></textarea>
+                            </td>
+                        </tr>
+
+                        </table>
+                </form>
+
+
+
+            </div>
+
+
+            <div title="@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "good spec")" data-options="iconCls:'icon-standard-user'" id="tab_b3">
+
+                <table id="item_specification"></table>
+
+            </div>
+
+
+            <div title="@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "goods options")" data-options="iconCls:'icon-standard-user'" id="tab_b2">
+
+                <table id="item_options"></table>
+
+            </div>
+            <div title="@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "photos")" data-options="iconCls:'icon-standard-user'" id="tab_b1">
+
+                <div id="imageDiv" style="display:none"><input style="display: none;" id="TPL_picturefile" type="file" multiple="false" /></div>
+
+                <div id="item_image" style="width: 100%; height: calc( 100% - 70px)">
+
+                </div>
+                <div id="queue" style="display:none;"></div>
+                <div id="pp"></div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div style='display:none'>
+
+
+
+
+    <div class="easyui-dialog" style="width:400px;height:300px" id="popupDialog"
+         data-options="title:'@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "setup")',modal:true,    closed: true,
+    			buttons:[{
+    				text:'@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "save")',
+    				handler:function(){SaveMe()}
+    			},{
+    				text:'@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "cancel")',
+    				handler:function(){CloseMe()}
+    			}]">
+
+        <div id="detail">
+        </div>
+    </div>
+
+    <div class="easyui-dialog" style="width:600px;height:300px" id="popupDialogSpec"
+         data-options="title:'@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "setup")',modal:true,    closed: true,
+    			buttons:[{
+    				text:'@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "save")',
+    				handler:function(){SaveSpec()}
+    			},{
+    				text:'@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "cancel")',
+    				handler:function(){CloseSpec()}
+    			}]">
+
+        <div id="detailSpec">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div id="item_search_dialog">
+        <div data-options="region: 'west',border:false">
+
+
+
+
+            <form id="item_search_content" class="form_content" method="post">
+                <table class="table_content" cellpadding="3" cellspacing="0" border="0">
+                    <input id='TPL_id' name='id' type='hidden' value='0' />
+
+                    <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "code")</td> <td>  <input id='TPL_food_code' name='food_code' type='text' class='_easyui-textbox' style='width:300px;' /></td></tr>
+
+                    <tr>
+                        <td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "cook flag") </td>
+                        <td>
+                            <input id='TPL_cook_flag0' name='cook_flag' type='radio'value='1' />@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "process")
+
+                            <input id='TPL_cook_flag1' name='cook_flag' type='radio' value='0' />@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "no process")
+
+                            <input id='TPL_cook_flag2' name='cook_flag' type='radio' checked value='-1' />@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "all")
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "active") </td>
+                        <td>
+                            <input id='TPL_active_flag0' name='active_flag' type='radio'value='1' />@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "enabled")
+
+                            <input id='TPL_active_flag1' name='active_flag' type='radio' value='0' />@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "disabled")
+
+                            <input id='TPL_active_flag2' name='active_flag' type='radio' checked value='-1' />@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "all")
+                        </td>
+                    </tr>
+                    <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "category") </td> <td>                                 <input id='TPL_categories' name='categories' class="_easyui-combobox" url2='category_list' data-options="valueField:'id',textField:'text',editable:false,hasDownArrow:false,panelHeight:90" style="width: 300px;"></td></tr>
+                    <tr><td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "menu_name") </td> <td>                                 <input id='TPL_options' name='options' class="_easyui-combobox" url2='options_list' data-options="valueField:'id',textField:'text',editable:false,hasDownArrow:false,panelHeight:90" style="width: 300px;"></td></tr>
+                </table>
+            </form>
+
+
+
+
+
+            <div id="main-panel_search_item_search2" title=" " data-options="region: 'center',border:true">
+                <div style="width:100%; border-bottom:solid 1px #a0a0a0">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "muti-query")</div>
+                <table class="table_content" cellpadding="3" cellspacing="0" border="0">
+                    <tr>
+                        <td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "same time")</td>
+
+                        <td class="td_title">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "column_name")</td>
+                        <td class="td_title">
+                            @MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "compare")
+                        </td>
+
+                        <td class="td_title">
+                            @MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "value")
+                        </td>
+                        <td class="td_title"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_title">
+                            <input id='TPL_orand' data-options=" valueField: 'id', textField: 'text', editable: true, hasDownArrow: true, panelHeight: 200,
+				            data: gOrAndData" name='orand' type='text' class='_easyui-combobox' style='width:100px' />
+                        </td>
+                        <td class="td_title">
+                            <input id='TPL_column_name' data-options=" valueField: 'id', textField: 'text', editable: true, hasDownArrow: true, panelHeight: 150,
+				            data: gColumnData,onSelect: function (data) {ColChanged(data);}, required: true" name='column_name' type='text' class='_easyui-combobox' style='width:150px' />
+                        </td>
+                        <td class="td_title">
+                            <input id='TPL_compare' data-options=" valueField: 'id', textField: 'text', editable: true, hasDownArrow: true, panelHeight: 200,
+				            data: gData1, required: true" name='compare' type='text' class='_easyui-combobox' style='width:60px' />
+                        </td>
+
+                        <td class="td_title" style="width: 210px;">
+                            <div id="td_value" style="display:none">
+                                <input id='TPL_value_int' name='value' type='text' class='_easyui-numberbox value' data-options="required: true,hidden:'true'" style='width:200px; display:none;' />
+                                <input id='TPL_value_date' name='value' type='text' class='_easyui-datebox value' data-options="required: true,hidden:'true'" style='width: 200px; display: none;' />
+                                <input id='TPL_value_varchar' name='value' type='text' class='_easyui-textbox value' data-options="required: true,hidden:'true'" style='width: 200px; display: none;' />
+                                <input id='TPL_value_decimal' name='value' type='text' class='_easyui-numberbox value' data-options="required: true,hidden:'true'" style='width:200px; display:none;' />
+
+                            </div>
+                        </td>
+                        <td class="td_title">
+                            <a href="javascript:void(0)" id="my_add_search_item_search" class="_easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="add_item_search_search()">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "")</a>
+
+                        </td>
+                    </tr>
+
+
+
+                </table>
+            </div>
+            <div id="main-panel_search_item_search" title=" " data-options="region: 'south',border:false">
+                <table id="item_search_search"></table>
+
+            </div>
+
+            <script>
+                var gCol=undefined;
+                function ColChanged(data){
+                 //   console.log(data);
+                    gCol = data;
+                    $("#td_value" ).show();
+                    // $(".value" ).prev().hide();
+
+                    //$("#TPL_value_int").hide();
+                    //$("#TPL_value_date").hide();
+                    //$("#TPL_value_varchar").hide();
+                    //$("#TPL_value_decimal").hide();
+                    //$("#TPL_value_"+data.type).show();
+                    //$("#TPL_value_"+data.type ).prev().show();
+                    //$("#TPL_value_"+data.type ).prev().show();
+
+
+                   $(".value" ).next().hide();
+                    $("#TPL_value_"+data.type ).next().show();
+                    if(data.type =="varchar"){
+
+                        var options = $('#TPL_compare').combobox('options');
+                        options.data = gData2;
+                        $('#TPL_compare').combobox(options);
+                    }else{
+                        var options = $('#TPL_compare').combobox('options');
+                        options.data = gData1;
+                        $('#TPL_compare').combobox(options);
+
+                    }
+                }
+
+
+
+
+                var gData1 = [
+                                                              { 'id': 'gt', 'text': '>' },
+                                                             { 'id': 'lt', 'text': '<' },
+                                                             { 'id': '=', 'text': '=' },
+                ];
+
+                var gData2 = [
+
+                                                             { 'id': 'like', 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "include")' },
+                                                             { 'id': 'not like', 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "not include")' },
+                                                             { 'id': '=', 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "total include")' }
+                ];
+
+                var gOrAndData = [
+                                                             { 'id': 'or', 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "or")' },
+                                                             { 'id': 'and', 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "and")' }
+                ];
+
+
+
+                var gColumnData	=[
+                //{ 'id': 'id'  , 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "id")'   , 'type': 'int'   }
+                // , { 'id': 'store_id'  , 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "store id")'   , 'type': 'int'   }
+                  { 'id': 'add_date'  , 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "add_on")'   , 'type': 'date'   }
+                // , { 'id': 'add_by'  , 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "add_by")'   , 'type': 'int'   }
+                // , { 'id': 'category_id'  , 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "category")'   , 'type': 'int'   }
+                // , { 'id': 'item_name'  , 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "name")'   , 'type': 'nvarchar'   }
+                 , { 'id': 'price'  , 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "price")'   , 'type': 'decimal'   }
+                 , { 'id': 'sort_number'  , 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "sort")'   , 'type': 'int'   }
+                 //, { 'id': 'description'  , 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "description")'   , 'type': 'nvarchar'   }
+                 //, { 'id': 'unit'  , 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "unit")'   , 'type': 'nchar'   }
+                 //, { 'id': 'specifications'  , 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "specification")'   , 'type': 'varchar'   }
+                 //, { 'id': 'tags'  , 'text': '@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "flag")'   , 'type': 'varchar'   }
+                ];
+                var gSearData={rows:[], total:0};
+
+                function add_item_search_search(){
+
+
+                    if(gSearData.rows.length>=gMaxWhere){
+                        layer.msg('最多只能设置'+gMaxWhere+'@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "query condition")'); return;
+                    }
+                    if(gCol == undefined){
+                        layer.msg('@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "please input query condition")'); return;
+                        return;
+                    }
+                    var orand= $("#TPL_orand").combobox("getValue");
+                    var column_name= $("#TPL_column_name").combobox("getValue");
+                    var compare= $("#TPL_compare").combobox("getValue");
+                    var value= $("#TPL_value_"+gCol.type).textbox("getValue")
+
+
+                    if(compare ==""|| value ==""){
+                        layer.msg('@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "please input query condition")'); return;
+                        return;
+                    }
+                    var d ={orand: orand,
+                        column_name: column_name,
+                        compare: compare,
+                        value: value}
+                    gSearData.rows.push(d);
+                    gSearData.total =  gSearData.rows.length;
+                    Reload();
+                    $("#TPL_orand").combobox("setValue","");
+                    $("#TPL_column_name").combobox("setValue","");
+                    $("#TPL_compare").combobox("setValue","");
+                    $("#TPL_value_int").numberbox("reset")
+                    $("#TPL_value_date" ).datebox("setValue","")
+                    $("#TPL_value_varchar" ).textbox("setValue","")
+                    // console.log(d);
+                }
+                function Reload(){
+                    var options = $('#item_search_search').datagrid('options');
+                    options.data = gSearData;
+                    $('#item_search_search').datagrid(options);
+                }
+
+                var gMaxWhere =5;
+
+                function removeit_item_search_search(index){
+                    com.message('c', ' <b style="color:red">@MyUIHelper.Get((System.Data.DataTable)ViewData["dictionary"], "are you sure to delete this query condition?") </b>', function (b) {
+                        if (b) {
+                            $('#item_search_search')
+                           .datagrid('deleteRow', index);
+                        }
+                    });
+                }
+            </script>
+        </div>
+
+    </div>
+
+
+
+
+
+</div>

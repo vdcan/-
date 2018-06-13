@@ -1,0 +1,448 @@
+﻿<!DOCTYPE HTML>
+<!--------------------------------------------------------------------------->  
+<!--                           INTRODUCTION                                
+
+ The CodeProject article submission template (HTML version)
+
+Using this template will help us post your article sooner. To use, just 
+follow the 3 easy steps below:
+ 
+     1. Fill in the article description details
+     2. Add links to your images and downloads
+     3. Include the main article text
+
+That's all there is to it! All formatting will be done by our submission
+scripts and style sheets. 
+
+-->  
+<!--------------------------------------------------------------------------->  
+<!--                        IGNORE THIS SECTION                            -->
+<html>
+<head>
+<title>CodeProject</title>
+<Style>
+BODY, P, TD { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt }
+H2,H3,H4,H5 { color: #ff9900; font-weight: bold; }
+H2 { font-size: 13pt; }
+H3 { font-size: 12pt; }
+H4 { font-size: 10pt; color: black; }
+PRE { BACKGROUND-COLOR: #FBEDBB; FONT-FAMILY: "Courier New", Courier, mono; WHITE-SPACE: pre; }
+CODE { COLOR: #990000; FONT-FAMILY: "Courier New", Courier, mono; }
+</style>
+<link type="text/css" rel="stylesheet" 
+      href="https://codeproject.global.ssl.fastly.net/App_Themes/CodeProject/Css/Main.min.css">
+</head>
+<body bgcolor="#FFFFFF" color=#000000>
+<!--------------------------------------------------------------------------->  
+
+
+<!-------------------------------     STEP 1      --------------------------->
+<!--  Fill in the details (CodeProject will reformat this section for you) -->
+
+<pre>
+Title:       MVC Shopping Cart application
+Author:      Jerry cai (369195)
+Email:       jerrycai73@gmail.com
+Language:    C#, MSSql, MVC, Jquery, easyui
+Platform:    Windows IIS
+Technology:  MVC .net framework
+Level:       Advanced
+Description: This is a shopping cart application. It's built on a MVC .net framework.
+Section      Web development
+SubSection   asp.net
+License:     CPOL
+</pre>
+
+<!-------------------------------     STEP 2      --------------------------->
+<!--  Include download and sample image information.                       --> 
+
+<ul class=download>
+<li><a href="Article_demo.zip">Download demo project - XXX Kb </a></li>
+<li><a href="Article_src.zip">Download source - XXX Kb</a></li>
+</ul>
+
+<p><img src="main.png" alt="Sample Image - maximum width is 600 pixels" 
+        style="width:400px; height:200px"></p>
+
+<!-------------------------------     STEP 3      --------------------------->
+
+<!--  Add the article text. Please use simple formatting (<h2>, <p> etc)   -->
+
+<h2>Introduction</h2>
+
+
+<p>This is a shopping cart application. It's built on a MVC .net framework JSSQL. 
+	 On the page side, it includes home page,  products page, details page, checkout page, register page, login page, and about page.
+	 <br/>
+	  On the admin's side, it's include Goods admin page, options page, specification page, tags page, category page, orders page,  context admin page. </p>
+
+<h2>Background</h2>
+
+<p>
+	  <h3> JSSQL Framework</h3>  
+	   <p><span style="font-weight: 400;">When I started to use MVC framework I found that it was too complex.
+	   	 The MVC framework which I was using has 5 files for each page: page.js, page.html, entity.cs, controller.cs, and service.cs.</span></p>
+                <ul>
+                    <li><span style="font-weight: 400;">page.html: forms the layout.</span></li>
+                    <li><span style="font-weight: 400;">page.js: shows the page elements(datagrid, button, input&hellip;) through JQuery and EasyUI.</span></li>
+                    <li><span style="font-weight: 400;">entity.cs: maps table columns.</span></li>
+                    <li><span style="font-weight: 400;">service.cs: creates the data jobs(insert, delete, update, select);</span></li>
+                    <li><span style="font-weight: 400;">controller.cs: &nbsp;transfers data between js and service.</span></li>
+                </ul>
+                <p><span style="font-weight: 400;">When you add one page, you need add the 5 files. Every time, when the page table changed, the whole 5 files need be changed too. 
+               After I used it, I found the entity, service, and controller can be combined together into one controller. This controller doesn&rsquo;t belong any page, so one controller can face muti-pages. 
+                The controller will only transfer the page request to the stored procedure and will return the results back to the page. The stored procedure does the all data jobs(insert, delete, update, select). 
+              The page and stored procedure&rsquo;s relation will also be saved in an action table.</span></p>
+
+
+	  
+            <p><span style="font-weight: 400;">This framework is based on MVC, it inherits the Advantages of MVC:</span> </p>
+            <ul>
+                <li><span style="font-weight: 400;">Faster development process</span></li>
+                <li><span style="font-weight: 400;">Ability to provide multiple views</span></li>
+                <li><span style="font-weight: 400;">Support for asynchronous technique</span></li>
+                <li><span style="font-weight: 400;">Modification does not affect the entire model</span></li>
+                <li><span style="font-weight: 400;">MVC model returns the data without formatting</span></li>
+            </ul>
+            <p><span style="font-weight: 400;">Through the code generator which comes with this framework, it fixed some disadvantages of MVC:</span></p>
+            <ul>
+                <li><span style="font-weight: 400;">&nbsp;MVC has an increased complexity of code. This is fixed by the code generator.</span></li>
+                <li><span style="font-weight: 400;">&nbsp;MVC has an inefficiency of data access in view, will be corrected by sending and receiving data through a stored procedure.</span></li>
+                <li><span style="font-weight: 400;">&nbsp;Knowledge on multiple technologies is required in order to operate MVC, solved by a transparent middle layer, the user will only need to know JS and sql.</span></li>
+                <li><span style="font-weight: 400;">&nbsp;Developer must have knowledge of client side code and html code, a lesser extent of knowledge is required for the code generator.</span></li>
+            </ul>
+      
+      
+	  <h3> Store App</h3>      
+	  After I made the JSSQL Framwork, a friend asked me to help him crate a website. I spent couple of days to find the web template, shopping cart JS, then another two days to finish the rest of the site. 
+	  The web side includes home page,  products page, detail page, checkout page, register page, login page, and about page.
+	  On the admin side, it includes goods page, admin page, options page, specification page, tags page, category page, orders page, and context admin page.
+	  <br/>
+	  Normally, this kind of web site would take weeks if it was made without anything else. with this framework, it can be done within days.
+	  
+	  
+	  
+	  
+	  
+	
+	  <h3>How JSSQL Framework works</h3>     
+
+Action is the basis of the framework, each page corresponds to multiple actions. Each action corresponds to a stored procedure or a SQL statement. For the management interface (requiring authorization check), each action has a button and its correspondence for permission check.
+
+<br/>
+Each time the JS sends out a Ajax action request, the background program checks the user of the action first and finds out if the page is legitimate. If it is legal, the corresponding stored procedure is executed and the execution results are returned.
+
+
+<br/>
+The parameters of the stored procedure are automatically filled by the system. When executing the stored procedure, the system first gets the source of the parameter (session, config, URL parameter, post data). If the bit definition is the source, it first checks whether the Ajax parameter contains the required parameters, if there is no session, URL parameter, or web config. if there is none, It is wrong.
+
+<br/>
+          </p>
+
+<h2>Using the code</h2>
+<h3>Add Web Page</h3>
+<p>
+	
+	  <ul>
+                <li>login as sysadmin with password 111</li>
+                <li>go to Code Generator->Web Page</li>
+                <li>click 'Add' button, fill in all the fields, select 'home controller' for controller, then click 'save' button  <br/> <img src="p2.png"  >  <br/> </li>
+                
+                <li>after save, click the 'module' tab</li>
+                <li> click 'Edit' button, then edit menu will show up. <br/> <img src="p3.png"  > <br/>  Click the add button <br/> <img src="p4.png"  >, <br/> 
+                	input the  area, table name, module, and class name , then click the save button.</li>
+                
+                <li>click the page row and it will refresh module. there will also be setup button on module data, click it to setup the module detail <br/> <img src="p5.png"  >  <br/> </li>
+                <li>select the column which should be shown in the page. click save button <br/>  <img src="p6.png"  > <br/> </li>
+                <li>click generate to generate the code. </li>
+                </ul> 
+                it will create three files:
+                
+                </p>
+<p>test1.sql</p>
+<pre>
+EXEC sys_add_menu_web 'test1', 'Test page', '', '/home', ' For testing ';  
+GO
+/*
+//------------------------------------------------------------------------------ 
+//        Date  2018-05-29
+//        Author  polltek.com   
+//			  
+//        data table MyCategory column 
+//------------------------------------------------------------------------------
+*/
+
+
+CREATE  PROCEDURE [dbo].[usp_MyCategory_list]
+AS
+    BEGIN 
+        SELECT  [active_flag] ,
+                [add_by] ,
+                [add_date] ,
+                [category_description] ,
+                [category_name] ,
+                [delete_flag] ,
+                [sort_number]
+        FROM    [category];
+    END; 
+</pre>
+<p>test1.js</p>
+
+<pre>    
+/*
+//------------------------------------------------------------------------------ 
+//        Date  2018-05-29
+//        Author  polltek.com   
+//			 For testing 
+//        File  test1.cshtml  Page file  
+//        File  test1.js JS
+//------------------------------------------------------------------------------ 
+*/
+ 
+ // Current page object 
+var km = {};
+km.model = null; 
+km.init = function () {
+};
+ 
+$(function () { 
+    $(km.init); 
+});
+
+ 
+ 
+//------------------------------------------------------------------------------ 
+//        Date  2018-05-29
+//        Author  polltek.com   
+//			   
+//------------------------------------------------------------------------------  
+
+ $(function () {
+     Load_MyCategoryData();
+ })
+
+ function Load_MyCategoryData(){
+ 	jsonObject={_t: com.settings.timestamp(),
+					};
+ 	
+com.ajax({
+
+            type: 'POST', url: km.model.urls["MyCategory_list"], data: jsonObject, success: function (result) { 
+            	
+        var t = {};
+        t.Table = result
+            	   $("#template_MyCategory").tmpl(t)
+                     .appendTo("#detail_div_MyCategory" );
+                     
+            }
+    });
+  }  
+   </pre>
+   
+   
+<p>test1.cshtml</p>
+   <pre>
+   	
+   	
+   	@{ 
+//------------------------------------------------------------------------------ 
+//        Date  2018-05-29
+//        Author  polltek.com   
+//			 				For testing 
+//        File  test1.cshtml  Page file 
+//------------------------------------------------------------------------------
+ 
+    ViewBag.Title = "Test page";
+    Layout = "~/Views/Home/_main_layout.cshtml";
+}
+
+@using System.Data;
+@section head{
+  &lt;style type="text/css"&gt; 
+    &lt;/style&gt;
+     
+}
+
+@section scripts{
+    &lt;script src="~/Areas/ViewJS/test1.js?v=@ViewBag.ts"&gt;&lt;/script&gt;
+     &lt;script type="text/javascript"&gt;
+       
+      var model_string = '@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model))';
+        km.model = JSON.parse(model_string);
+    &lt;/script&gt;
+}
+ 
+ 
+&lt;div class="container" style="padding-top: 100px;"&gt;
+    	
+  
+ 
+&lt;script src="~/Scripts/jquery.tmpl.js"&gt;&lt;/script&gt;
+&lt;script src="~/Scripts/jquery.tmplPlus.js"&gt;&lt;/script&gt; 
+
+&lt;script id="template_MyCategory" type="text/x-jquery-tmpl"&gt;
+	...
+	
+  </pre>
+  
+  <br/>
+ For JS and cshtml file,  Select  file data and click publish. <br/> <img src="p3.png"  > <br/> 
+  This wil auto copy js file to /areas/viewjs and chtml to /view/home ( home is the controller name). for Sql file , 
+ You will need copy the text and go to sql management to run it.
+ After  restart the IIS. you will see the page in web menu.
+  <br/> <img src="p8.png"  > <br/> 
+</br>
+<h3>Add Admin Page</h3>
+<p> Adding the admin page is the same as adding web page. Just go to  go to Code Generator->Admin Page. for admin page, you need select parent menu and area.
+	  <br/> <img src="p2_1.png"  > <br/> 
+	  Perform the steps for adding a web page. 
+  Restart the IIS and you will see the page in admin menu.
+   <br/> <img src="p2_2.png"  > <br/> 
+ 
+	</p>
+
+
+<h3>Customized Code</h3>
+<p> For most of the logical parts, you don't need change the code. You would just need to modify the JS and stored procedure. Sometimes if you do need process the data before send it to the database,  You can write you own functions: </p>
+
+<p>For example: In Goods Admin page,  if you want to upload an image, you must save the image to user deparment folder and run usp_item_photo_insert to  save the image path to database, you can do this in the controller </p>
+
+
+  Stored procedure:      usp_item_photo_insert
+<pre>
+ALTER  PROCEDURE [dbo].[usp_item_photo_insert]
+    @add_by INT ,
+    @url VARCHAR(500) ,
+    @default_flag BIT ,
+    @item_id INT ,
+    @url_thumb VARCHAR(100)
+AS
+    BEGIN 
+       
+        IF EXISTS ( SELECT  1
+                    FROM    dbo.item_photo
+                    WHERE   item_id = @item_id )
+            SET @default_flag = 0;
+        ELSE
+            SET @default_flag = 1;
+       
+        INSERT  INTO [item_photo]
+                ( [add_date] ,
+                  [add_by] ,
+                  [url] ,
+                  [default_flag] ,
+                  [item_id] ,
+                  [url_thumb]
+                )
+        VALUES  ( GETDATE() ,
+                  @add_by ,
+                  @url ,
+                  @default_flag ,
+                  @item_id ,
+                  @url_thumb
+                );
+        
+    
+    END; 
+</pre>
+
+At first you need add a function to the controller:
+
+<pre>
+
+ public string uploadItemImage(System.Web.UI.HtmlControls.HtmlInputFile uploadFiles)
+        {
+
+
+            string item_id = Request.Params["item_id"];
+            //Save the image to current user's  \upload\sDepartmentID\item_id\
+            string p = Server.MapPath("/");
+            p = p + "\\upload\\s" + CurrentUser.DepartmentID.ToString() + "\\" + item_id + "\\";
+            string tmpFile = "";
+						//check if the fold is there
+            if (!System.IO.Directory.Exists(p))
+                System.IO.Directory.CreateDirectory(p);// if not, then create one
+                
+            string thumbP = "";
+            for (int i = 0; i <= Request.Files.Count - 1; i++)
+            {
+
+                if (Request.Files[i].FileName.Trim().Length > 0)
+                {
+										//get the file name
+                    string n = Request.Files[i].FileName.Substring(Request.Files[i].FileName.LastIndexOf("\\") + 1);
+
+                    DateTime now = DateTime.Now;
+                    DateTime old = new DateTime(2017, 6, 28);
+                    TimeSpan ts = now - old;
+                    int s = (int)ts.TotalSeconds;
+                    Random r = new Random();
+
+                    string ext = n.Substring(n.IndexOf("."));
+                    //create a file name
+                    n = s.ToString() + "_" + r.Next(100).ToString() + ext;
+                    tmpFile = n;
+                    //save the image 
+                    Request.Files[i].SaveAs(p + "\\" + n);
+                    thumbP = p + "\\thumb\\";
+                    if (!System.IO.Directory.Exists(thumbP))
+                        System.IO.Directory.CreateDirectory(thumbP);
+                    ImageClass ic = new ImageClass(p + "\\" + n);
+                    //save the thrumb image
+                    ic.GetReducedImage(80, 80, thumbP + "\\" + n);
+                }
+            }
+						//Save the image info to the database
+            JObject data = new JObject();
+            data["add_by"] = CurrentUser.UserId;
+            data["url"] = "/upload/s" + CurrentUser.DepartmentID.ToString() + "/" + item_id + "/" + tmpFile;
+            data["default_flag"] = 0;
+            data["url_thumb"] = "/upload/s" + CurrentUser.DepartmentID.ToString() + "/" + item_id + "/thumb/" + tmpFile; ;
+
+            runProc(data);
+
+
+            return tmpFile;
+
+
+        }
+
+</pre>
+
+Then go to 'Code Generator'->'Action'. find the page and action,
+
+<br/><img src="p3_1.png"  style="width: 80%" ></br/>
+Change the action function to 'uploadItemImage'. After you restart IIS, if you call 'item_photo_insert', it will run 'uploadItemImage'.
+
+
+
+
+<h2>Points of Interest</h2>
+<h3>Code Free</h3>
+<p> This framework is code free. You don't need write any C# code, and the logic is done by JS and the stored procedures. 
+After it is published, you even don't need VS studio to change the code, just change the JS, table and stored procedures.<br/>
+
+
+<h3>Code Generator</h3>
+  This framework comes with a code generator, and it can do the most of work. The code generator can convert the selected tables to the corresponding JS, SQL, and code (c#, php, java) based on the selected templates and modules. JSSQL framework will inherit the complex shortcomings of the MVC system structure and implementation and the generator solves many of the problems. If the parameters are properly set up, a complex page and corresponding program can be generated immediately.  
+            <p><span style="font-weight: 400;">The characteristics of the generator:</span></p>
+            <ul>
+                <li style="font-weight: 400;"><span style="font-weight: 400;">One click generation: by clicking the mouse, simple settings can generate complex pages, stored procedures and corresponding programs.</span></li>
+                <li style="font-weight: 400;"><span style="font-weight: 400;">Support for multiple tables: one page can perform multi table operations. Tables that conform to the agreed table can automatically generate table relational calls.</span></li>
+        
+             </ul>
+            
+
+
+<h3>multi-language </h3>
+The code generator supports both English and Chinese.
+
+	</p>
+
+
+
+<!-------------------------------    That's it!   --------------------------->
+</body>
+
+</html>
+

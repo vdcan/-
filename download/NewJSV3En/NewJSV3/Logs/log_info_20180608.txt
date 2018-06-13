@@ -1,0 +1,870 @@
+[2018/6/8 9:34:48]tmpMenuCode index_lan@en
+[2018/6/8 9:35:00]tmpMenuCode about
+[2018/6/8 9:35:08]tmpMenuCode Portal
+[2018/6/8 9:35:12]baseindex BaEExAXgECCC//c1IsHsLDjPcNe4cUNm
+[2018/6/8 9:35:12]tmpMenuCode admin_user
+[2018/6/8 9:35:12]BaseIndex (reset_pwd):runproc--ProcedureName:vdp_reset_user_pwd SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/RunProc?token=4AI9DMjfl_Lp6sfrf_hTCpTh6AG_LNh2M8kQTo7o8Wk=&b=dBefzUy6OZ74tpA1-P7TEw==
+[2018/6/8 9:35:12]BaseIndex (xx_User_pager):pager--ProcedureName:vdp_User_pager SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/pager?token=4AI9DMjfl_Lp6sfrf_hTCrAFe9ljc4XzVO9wGBkobTY=&b=IVjzrdjqffu7VoXbRjswzg==
+[2018/6/8 9:35:12]BaseIndex (department_tree):listdt--ProcedureName:vdp_list_department_tree SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/ListDT?token=4AI9DMjfl_Lp6sfrf_hTCuDAFdsFT8ulKxshagfFTTE=&b=fufLsLULHeVBGYaljIrU2g==
+[2018/6/8 9:35:12]BaseIndex (user_role_pager_check):pager--ProcedureName:vdp_user_role_pager_check SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/pager?token=4AI9DMjfl_Lp6sfrf_hTChy_SeTjB2mI4L51aYwGmB0=&b=IVjzrdjqffv6i7iSjaiIYw==
+[2018/6/8 9:35:13]BaseIndex (user_role_check):runproc--ProcedureName:vdp_user_role_check SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_IIQpE684c5pL6PLce4y11aah_9CJ-7Wc4=&b=ZPNb86sMHksufpb3BeSyyQ==
+[2018/6/8 9:35:13]BaseIndex (xx_User_delete):runproc--ProcedureName:vdp_User_delete SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_IIQpE684c5pA1j_gOVSiSO-tAYpMDVKvs=&b=1vh5iPWnXd39T5Axg-8p_Q==
+[2018/6/8 9:35:13]BaseIndex (xx_User_update):runproc--ProcedureName:vdp_User_update SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_IIQpE684c5pOiNbssW9wmNuO35AREoUnM=&b=JQi6Xu5bJ59Jc43PTORxZg==
+[2018/6/8 9:35:13]BaseIndex (xx_User_insert):runproc--ProcedureName:vdp_User_insert SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_IIQpE684c5pJ2S3kIvEURrYMSRK5uggDI=&b=H8bdSj9idNk=
+[2018/6/8 9:35:13]admin_user
+[2018/6/8 9:35:17]baseindex BaEExAXgECAnXwYIKwPrIwXITNdc94PU
+[2018/6/8 9:35:17]tmpMenuCode language
+[2018/6/8 9:35:17]BaseIndex (menu_pager):pager--ProcedureName:vdp_menu_pager SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/pager?token=4AI9DMjfl_LZEpHtBsegopdBCHA5j4wd-wP7O7OeUps=&b=IVjzrdjqffs8KPRgG4oyWA==
+[2018/6/8 9:35:17]BaseIndex (dictionary_pager):pager--ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/pager?token=4AI9DMjfl_LZEpHtBsegopl2JfVIyRKY7wlpMQ3GgLk=&b=IVjzrdjqffssLyrAMCn53Q==
+[2018/6/8 9:35:17]BaseIndex (dictionary_delete):runproc--ProcedureName:vdp_dictionary_delete SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_LZEpHtBsegou1vHQnskVIbFanfzJwcwmE=&b=_D-nytIWLoeOpuMdweHpbA==
+[2018/6/8 9:35:17]BaseIndex (dictionary_update):runproc--ProcedureName:vdp_dictionary_update SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_LZEpHtBsegolqTfDdeL3ML9BzdTugO8pc=&b=wIky4N6XpiRaX1gXnNdRfw==
+[2018/6/8 9:35:17]BaseIndex (dictionary_insert):runproc--ProcedureName:vdp_dictionary_insert SQL: Type:proc ConnStr:app ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_LZEpHtBsegos3OcUs-o7sMwCZCUTICuTw=&b=gdQsKcxX0cM=
+[2018/6/8 9:35:17]language
+[2018/6/8 9:35:18]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:35:18]can not find parameter sort ProcedureName:vdp_menu_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:18]can not find parameter desc ProcedureName:vdp_menu_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:18]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:35:18]can not find parameter sort ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:18]can not find parameter desc ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:18]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:35:18]can not find parameter sort ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:19]can not find parameter desc ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:19]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:35:19]can not find parameter sort ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:19]can not find parameter desc ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:19]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:35:19]can not find parameter sort ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:19]can not find parameter desc ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:22]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:35:22]can not find parameter sort ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:22]can not find parameter desc ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:24]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:35:24]can not find parameter sort ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:24]can not find parameter desc ProcedureName:vdp_dictionary_pager SQL: Type:proc ConnStr:app ActionType:pager
+[2018/6/8 9:35:25]baseindex pTkSvmoYqnMwTZwEdh9RBWe9EvnEwNM/
+[2018/6/8 9:35:25]tmpMenuCode context
+[2018/6/8 9:35:25]BaseIndex (context_pager):pager--ProcedureName:usp_context_pager SQL: Type:proc ConnStr:app ActionType:--/Dev/titan2/pager?token=4AI9DMjfl_IJTLDVz8SyUQTH5KfzBa2MZivR2-uM5Hk=&b=IVjzrdjqfftL4iy-dZkrpQ==
+[2018/6/8 9:35:25]BaseIndex (context_delete):runproc--ProcedureName:usp_context_delete SQL: Type:proc ConnStr:app ActionType:--/Dev/titan2/runProc?token=4AI9DMjfl_IJTLDVz8SyUd_s2g6uAbf3OPVJN4G3fiw=&b=_D-nytIWLochEHg6hNgsbg==
+[2018/6/8 9:35:25]BaseIndex (context_update):runproc--ProcedureName:usp_context_update SQL: Type:proc ConnStr:app ActionType:--/Dev/titan2/runProc?token=4AI9DMjfl_IJTLDVz8SyUVWZvkWv9H7nbrbfO7GzWwY=&b=x4zAlsvsE6eq4ageVsqZeg==
+[2018/6/8 9:35:25]BaseIndex (context_insert):runproc--ProcedureName:usp_context_insert SQL: Type:proc ConnStr:app ActionType:--/Dev/titan2/runProc?token=4AI9DMjfl_IJTLDVz8SyUSGEXugjezbTpQIn3PFJwQ0=&b=IFz9OdIMT4U=
+[2018/6/8 9:35:25]BaseIndex (category_list):listdt--ProcedureName:usp_context_category_list SQL: Type:proc ConnStr:app ActionType:--/Dev/titan2/listdt?token=4AI9DMjfl_IJTLDVz8SyUV4o9xSjgQcp&b=6QioiNjdt5Iox3wfS9Pm5w==
+[2018/6/8 9:35:25]context
+[2018/6/8 9:35:26]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:35:35]baseindex BaEExAXgECA6IkmwUYeWD39x4MF82QOL
+[2018/6/8 9:35:35]tmpMenuCode menu_admin
+[2018/6/8 9:35:35]BaseIndex (MenuButton_list_check):listdt--ProcedureName:vdp_Menu_Button_list_check SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/ListDT?token=4AI9DMjfl_LH1d9lAsbfpixb-S83e81Z&b=IVjzrdjqfftMJIEBrg7VVQ==
+[2018/6/8 9:35:35]BaseIndex (MenuButton_check):runproc--ProcedureName:vdp_Menu_Button_check SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_LH1d9lAsbfpjA0yKplkStQ&b=IVjzrdjqffs_FZYWG7fdKA==
+[2018/6/8 9:35:35]BaseIndex (Role_list):listdt--ProcedureName:vdp_Role_list SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/ListDT?token=4AI9DMjfl_LH1d9lAsbfppICiy66Ngdd&b=IVjzrdjqffuG_dM8k2YVUw==
+[2018/6/8 9:35:35]BaseIndex (tree):listdt--ProcedureName:vdp_menu_tree SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/ListDT?token=4AI9DMjfl_LH1d9lAsbfpnEzo0ggBzzK&b=IVjzrdjqffsAOcSi5G-row==
+[2018/6/8 9:35:35]BaseIndex (menu_delete):runproc--ProcedureName:vdp_menu_delete SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_JzDudk3N0bVLKQaAFoBLD5&b=26VCQprrWjnZ87Qx39inFg==
+[2018/6/8 9:35:35]BaseIndex (menu_update):runprocm--ProcedureName:vdp_menu_update SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/runProcM?token=4AI9DMjfl_JzDudk3N0bVAiboxKvrs8f&b=novB3PTfMGM=
+[2018/6/8 9:35:35]BaseIndex (menu_insert):runprocm--ProcedureName:vdp_menu_insert SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/runProcM?token=4AI9DMjfl_JzDudk3N0bVJp5HwIqUznE&b=ye3zLNh5T0k=
+[2018/6/8 9:35:35]BaseIndex (MenuButton_pager):pager--ProcedureName:vdp_MenuButton_pager SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/pager?token=4AI9DMjfl_JzDudk3N0bVEYVflb5oiBp&b=IVjzrdjqffspPBQoO0ipJg==
+[2018/6/8 9:35:35]BaseIndex (MenuButton_delete):runproc--ProcedureName:vdp_MenuButton_delete SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_JzDudk3N0bVGV_d5mNfNl6&b=26VCQprrWjlHTUDW9cjx8g==
+[2018/6/8 9:35:35]BaseIndex (MenuButton_update):runproc--ProcedureName:vdp_MenuButton_update SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_JzDudk3N0bVB6Y6rpxI_G9&b=mYa7xJ_eVh0=
+[2018/6/8 9:35:35]BaseIndex (MenuButton_insert):runproc--ProcedureName:vdp_MenuButton_insert SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_JzDudk3N0bVByQHEvGk5in&b=51jYK82gxTY=
+[2018/6/8 9:35:35]BaseIndex (button_pager):pager--ProcedureName:vdp_button_pager SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/pager?token=4AI9DMjfl_JzDudk3N0bVM7BpaM16Tyk&b=IVjzrdjqffsuYdGjFxsslA==
+[2018/6/8 9:35:35]menu_admin
+[2018/6/8 9:35:36]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:35:36]can not find parameter sort ProcedureName:vdp_button_pager SQL: Type:proc ConnStr:sys ActionType:pager
+[2018/6/8 9:35:36]can not find parameter desc ProcedureName:vdp_button_pager SQL: Type:proc ConnStr:sys ActionType:pager
+[2018/6/8 9:35:40]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:35:40]can not find parameter sort ProcedureName:vdp_MenuButton_pager SQL: Type:proc ConnStr:sys ActionType:pager
+[2018/6/8 9:35:40]can not find parameter desc ProcedureName:vdp_MenuButton_pager SQL: Type:proc ConnStr:sys ActionType:pager
+[2018/6/8 9:35:41]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:35:41]can not find parameter sort ProcedureName:vdp_MenuButton_pager SQL: Type:proc ConnStr:sys ActionType:pager
+[2018/6/8 9:35:41]can not find parameter desc ProcedureName:vdp_MenuButton_pager SQL: Type:proc ConnStr:sys ActionType:pager
+[2018/6/8 9:35:42]baseindex BaEExAXgECBaZTxZkE7muXeN3kI12DkX
+[2018/6/8 9:35:42]tmpMenuCode role_admin
+[2018/6/8 9:35:42]BaseIndex (menulist):listdt--ProcedureName:vdp_menu_tree SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/ListDT?token=4AI9DMjfl_JmYwwhbVNCuc-xuQ4UZfNL&b=IVjzrdjqffvMqlv5e1QcWQ==
+[2018/6/8 9:35:42]BaseIndex (role_pager):pager--ProcedureName:vdp_role_pager SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/pager?token=4AI9DMjfl_JmYwwhbVNCuTcIJOuBbICV&b=IVjzrdjqffvfOldmPivmuA==
+[2018/6/8 9:35:42]BaseIndex (role_delete):runproc--ProcedureName:vdp_role_delete SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_JmYwwhbVNCuaVvDK9cIyKe&b=gHni58vizPaTk-wRtM3Znw==
+[2018/6/8 9:35:42]BaseIndex (role_update):runproc--ProcedureName:vdp_role_update SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_JmYwwhbVNCuWrBKvlBCZTQ&b=_A8ApmQIPA4=
+[2018/6/8 9:35:42]BaseIndex (role_insert):runproc--ProcedureName:vdp_role_insert SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_JmYwwhbVNCuckTe2iUxhOR&b=80ZPnR_6--g=
+[2018/6/8 9:35:43]BaseIndex (list_all_buttons):listdtvd--ProcedureName:vdp_list_all_buttons SQL: Type:proc ConnStr:sys ActionType:--[
+  {
+    "button_code": "back",
+    "button_text": "back",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-hamburg-sign-out",
+    "id": 9,
+    "menu_id": 8
+  },
+  {
+    "button_code": "publish",
+    "button_text": "publish",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-bricks",
+    "id": 27,
+    "menu_id": 8
+  },
+  {
+    "button_code": "sync",
+    "button_text": "sync",
+    "sort": 200,
+    "button_type": 0,
+    "icon_class": "icon-hamburg-docs",
+    "id": 36,
+    "menu_id": 10
+  },
+  {
+    "button_code": "resetpwd",
+    "button_text": "resetpwd",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-lock-edit",
+    "id": 29,
+    "menu_id": 20
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 18
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 18
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 19
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 19
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 19
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 19
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 20
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 20
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 20
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 20
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 55
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 55
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 55
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 55
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 59
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 59
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 59
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 59
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 35
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 35
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 35
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 35
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 60
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 36
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 36
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 37
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 38
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 14
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 14
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 14
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 14
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 38
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 38
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 38
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 8
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 44
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 63
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 44
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 44
+  },
+  {
+    "button_code": "add",
+    "button_text": "¿’¬…v",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 44
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 45
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 45
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 45
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 45
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 50
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 50
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 50
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 50
+  },
+  {
+    "button_code": "save",
+    "button_text": "±£¥Ê",
+    "sort": 200,
+    "button_type": 0,
+    "icon_class": "icon-hamburg-cv",
+    "id": 1,
+    "menu_id": 47
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 64
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 11
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 10
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 10
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 10
+  },
+  {
+    "button_code": "generate",
+    "button_text": "generate",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-bricks",
+    "id": 21,
+    "menu_id": 10
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 10
+  },
+  {
+    "button_code": "back",
+    "button_text": "back",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-hamburg-sign-out",
+    "id": 9,
+    "menu_id": 9
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 9
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 9
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 12
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 1
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 1
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 1
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 1
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 2
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 2
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 3
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 3
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 3
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 3
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 2
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 2
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 15
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 15
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 15
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 15
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 41
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 8
+  },
+  {
+    "button_code": "refresh",
+    "button_text": "refresh",
+    "sort": 200,
+    "button_type": 1,
+    "icon_class": "icon-standard-arrow-refresh",
+    "id": 28,
+    "menu_id": 8
+  },
+  {
+    "button_code": "delete",
+    "button_text": "delete",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-delete",
+    "id": 15,
+    "menu_id": 41
+  },
+  {
+    "button_code": "edit",
+    "button_text": "edit",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-pencil",
+    "id": 18,
+    "menu_id": 41
+  },
+  {
+    "button_code": "add",
+    "button_text": "add",
+    "sort": 0,
+    "button_type": 1,
+    "icon_class": "icon-standard-add",
+    "id": 7,
+    "menu_id": 41
+  }
+]
+[2018/6/8 9:35:43]BaseIndex (RoleMenuButton):listdt--ProcedureName:vdp_list_RoleMenuButton SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/ListDT?token=4AI9DMjfl_K4Lonxpyj_0TSaRgDs04MU&b=IVjzrdjqffsd4wOzIFK-Cg==
+[2018/6/8 9:35:43]BaseIndex (RoleMenu):listdt--ProcedureName:vdp_list_RoleMenu SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/ListDT?token=4AI9DMjfl_K4Lonxpyj_0ZyERMU-cMjX&b=IVjzrdjqffuGtchD-jf1Hg==
+[2018/6/8 9:35:43]BaseIndex (check_all):runproc--ProcedureName:vdp_MenuButton_check_all SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_K4Lonxpyj_0TirYjsP36Tx&b=IVjzrdjqffutjWDhMyIwlQ==
+[2018/6/8 9:35:43]BaseIndex (check):runproc--ProcedureName:vdp_MenuButton_check SQL: Type:proc ConnStr:sys ActionType:--/sys/sysbase/runProc?token=4AI9DMjfl_K4Lonxpyj_0Q_UnI02ghQx&b=IVjzrdjqffsy0dOiqE4oPw==
+[2018/6/8 9:35:43]role_admin
+[2018/6/8 9:35:43]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:35:43]can not find parameter sort ProcedureName:vdp_role_pager SQL: Type:proc ConnStr:sys ActionType:pager
+[2018/6/8 9:35:43]can not find parameter desc ProcedureName:vdp_role_pager SQL: Type:proc ConnStr:sys ActionType:pager
+[2018/6/8 9:36:23]pager:System.Collections.Generic.Dictionary`2[System.String,System.String]
+[2018/6/8 9:36:23]can not find parameter sort ProcedureName:vdp_MenuButton_pager SQL: Type:proc ConnStr:sys ActionType:pager
+[2018/6/8 9:36:23]can not find parameter desc ProcedureName:vdp_MenuButton_pager SQL: Type:proc ConnStr:sys ActionType:pager
